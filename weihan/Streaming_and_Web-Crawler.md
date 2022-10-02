@@ -10,6 +10,7 @@
 串流媒體在隨選視訊和串流影音電視（如IPTV）服務中最為普遍，例如: Netflix、Disney、YouTube、Apple Music、Spotify。
 
 - 隨選視訊
+
     ![隨選視訊](https://i.imgur.com/FkpD1y6.png)
 
 <!--
