@@ -1,5 +1,6 @@
 # 專題筆記: GitHub 與 Git
 09/22 - 09/28, 2022
+09/29 - 10/05, 2022
 
 <!-- -------------------------------------------------- -->
 GitHub & Git
@@ -12,6 +13,172 @@ Git 是一款分散式的版控系統，每個開發者都有一份完整的本�
 
 - 分散式優點: 網路依賴低
 - 分散式缺點: 權限控管稍微麻煩
+
+### 架構
+
+![使用 Git 備份資料到 GitHub](https://i.imgur.com/CzQLvDv.png)
+
+- working directory（工作目錄）：
+
+    工作目錄主要是存放需要控制版本的檔案資料夾。經由在資料夾內建立 git 的資料庫，此資料夾就能變成 git 的工作目錄。
+    
+- staging area（準備提交區）
+
+    準備提交區用於紀錄將要被提交的資料。若在工作目錄下的檔案有變動，且我們希望能提交這些更新過的資料，就將這些資料存入準備提交區，此狀態下只標記要被提交的資料，尚未將資料提交出去。
+
+- local repository（本地資料庫）
+
+    即為自己電腦端上的資料庫。當確定好所有要提交的資料都加入到準備提交區之後，可以將準備提交區的資料做提交紀錄，提交後的資料會被紀錄成一個提交紀錄保存於資料庫中。
+
+- remote repository（遠端資料庫）
+
+    即為遠端伺服器上的資料庫。當本地資料備齊後，我們可以透過上傳將資料保存到遠端資料庫，也可以反過來將遠端資料庫的紀錄同步下來。
+
+<!-- -------------------------------------------------- -->
+Git 指令
+---
+
+### 基本指令
+
+    - git init
+    建立本地資料庫
+    
+    - git status
+    查看資料夾內的檔案狀態: 是否修改、新增
+    
+    - git log
+    查看資料庫紀錄
+    
+    - gitk
+    啟動圖形介面
+    
+    - git checkout <ID>
+    移動到指定的提交紀錄
+    
+### 本地資料操作
+
+    - git add <file name>
+    將檔案加入到準備提交區
+    
+    - git add .
+    將所有檔案加入到準備提交區
+    
+    - git commit -m "<remark>"
+    把準備提交區的檔案儲存到資料庫中
+    
+    - git reset --soft head~<n>
+    回到前n次commit的狀態
+    
+    - git reset -- <file name>
+    將檔案從準備提交區移除
+    
+    - git checkout -- <file name>
+    將檔案重置到上次commit的狀態
+    
+### 遠端+本地資料操作
+    
+    - git remote add origin <DB URL>
+    連結遠端資料庫
+    
+    - git push origin <branch name>
+    將資料同步至遠端 (origin 前加上 -u 設定預設)
+    
+    - git pull origin <branch name>
+    同步資料庫到工作目錄 (下載、合併分支、解決conflict)
+    
+    - git clone <DB Link>
+    將遠端的資料庫複製到本地端 (下載完整專案)
+    
+    - git clone -b <branch name> <DB URL>
+    不下載主線程式碼，只下載支線程式碼
+    
+### Branch
+    
+    - git branch
+    查看所有分支
+    
+    - git branch -a
+    查看所有分支 (包含 remote)
+
+    - git switch <branch name>
+    切換分支 (要把全部檔案commit後才能切換)
+    
+    - git checkout -b <branch name>
+    建立新分支
+    
+    - git branch -d <branch name>
+    刪除分支
+    
+    - git push -u origin <branch name>
+    將branch推到GitHub
+
+### Merge
+
+- 要養成一個習慣，每次push前，先切到本地master把origin拉下來，再去本地分支做rebase，解conflict後再推出去
+
+方法1: GitHub進行merge
+    
+    在 master 分支進行 git pull
+    回到 new-feature 進行 git rebase master
+    解決 conflict 後存檔進行 git add
+    git rebase --continue (可能要重複好幾次)
+    
+    git log 確認
+    git push -f 強制 push (會改變歷史紀錄，共協的分支不要使用)
+    刪掉不要的分支
+    回到 GitHub 用 pull request
+    
+方法2: 本地進行merge
+    
+    在 master 進行 git merge new-feature
+    
+### 好的 commit 訊息
+
+1. 格式
+
+    ![格式](https://i.imgur.com/ysMVrHk.png)
+
+2. 主旨不超過50字 (通常1行)
+    
+3. 主旨用大寫開頭
+
+4. 主旨不用加句點
+
+5. 主旨句用祈使句 (命令句型用原型)
+
+6. 內文72個字一行
+
+7. 用內文解釋"為什麼"做這些修改
+
+    what、how程式內就看的出來，留下why很重要
+
+### 解決方案: Permission denied (publickey).
+
+(1) 檢視shh key是否存在 (若存在跳到步驟3）
+
+    ls ~/.ssh/
+
+(2) 新建ssh key
+
+    ssh-keygen -t rsa -C "GitHub user name"
+
+(3) 將ssh key新增到ssh-agent
+
+    1. 啟動ssh-agent    
+    eval "$(ssh-agent -s)"
+        
+    2. 將ssh key新增到ssh-agent
+    ssh-add ~/.ssh/id_rsa
+        
+(4) 將ssh key新增到GitHub賬號
+
+settings --> SSH and GPG keys --> new SSH key
+
+    Title隨便填寫
+    
+    "C:\Users\<username>\.ssh\id_rsa.pub" 的編碼複製貼上到key裡
+    
+    Add SSH key
 
 <!-- -------------------------------------------------- -->
 分版
@@ -52,6 +219,7 @@ Branch是一個建立分支的Git指令，可將某個歷史版本複製一份�
 [GitHub Branch 策略 - 哪一種方式適合你?](https://ithelp.ithome.com.tw/articles/10261136?sc=iThelpR)
 [Git版本恢復與分支管理](https://mropengate.blogspot.com/2015/11/git-git.html)
 
+[影片清單: git教學系列](https://www.youtube.com/playlist?list=PLz-S_Wd1N3svV8XnuDM6CPaTCtQkk5SY4)
 [Git 指令練習](https://learngitbranching.js.org/?locale=zh_TW)
 
 <!-- -------------------------------------------------- -->
