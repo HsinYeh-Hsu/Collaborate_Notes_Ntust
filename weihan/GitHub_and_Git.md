@@ -99,15 +99,18 @@ Git 指令
     
     - git branch -a
     查看所有分支 (包含 remote)
-
-    - git switch <branch name>
-    切換分支 (要把全部檔案commit後才能切換)
     
     - git checkout -b <branch name>
     建立新分支
     
     - git branch -d <branch name>
     刪除分支
+    
+    - git switch <branch name>
+    切換分支 (要把全部檔案commit後才能切換)
+    
+    - git branch -m <new branch name>
+    重新命名目前的分支名稱
     
     - git push -u origin <branch name>
     將branch推到GitHub
