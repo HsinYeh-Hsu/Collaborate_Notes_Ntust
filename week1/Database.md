@@ -88,6 +88,7 @@ NoSQL是為了解決以往關聯型資料庫所不擅長的部分而產生出來
 ---
 
 [資料庫是什麼?](https://azure.microsoft.com/zh-tw/resources/cloud-computing-dictionary/what-are-databases/)
+
 [影片: 快速了解NoSQL](https://www.youtube.com/watch?v=zzDBxzlmHHU)
 
 <!-- -------------------------------------------------- -->

@@ -79,7 +79,9 @@ Python之所以是最適合寫爬蟲的程式語言，除了寫法更簡潔之�
 ---
 
 [串流媒體](https://zh.wikipedia.org/zh-tw/%E6%B5%81%E5%AA%92%E4%BD%93)
+
 [串流技術](https://johnpam11.pixnet.net/blog/post/118644993-%E4%B8%8A%E7%B6%B2%E7%9C%8Byoutube%E5%BD%B1%E7%89%87%E5%B1%AC%E6%96%BC%E7%B6%B2%E8%B7%AF%E4%B8%B2%E6%B5%81%E5%BD%B1%E9%9F%B3%E6%98%AF%E4%BB%80%E9%BA%BC%EF%BC%9Fyo)
+
 [影音傳輸-傳輸方式與通訊協定](https://pjchender.dev/webdev/webrtc-protocol/)
 
 [認識網路爬蟲](https://www.webscrapingpro.tw/what-is-web-scraping/)

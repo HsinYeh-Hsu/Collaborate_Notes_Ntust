@@ -217,12 +217,15 @@ Branch是一個建立分支的Git指令，可將某個歷史版本複製一份�
 ---
 
 [Git達人教你搞懂GitHub基礎觀念](https://www.ithome.com.tw/news/95283)
+
 [專案時報錯Permission denied](https://www.796t.com/content/1544294526.html)
 
 [GitHub Branch 策略 - 哪一種方式適合你?](https://ithelp.ithome.com.tw/articles/10261136?sc=iThelpR)
+
 [Git版本恢復與分支管理](https://mropengate.blogspot.com/2015/11/git-git.html)
 
 [影片清單: git教學系列](https://www.youtube.com/playlist?list=PLz-S_Wd1N3svV8XnuDM6CPaTCtQkk5SY4)
+
 [Git 指令練習](https://learngitbranching.js.org/?locale=zh_TW)
 
 <!-- -------------------------------------------------- -->

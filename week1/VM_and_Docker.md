@@ -29,7 +29,8 @@ VM (虛擬機器)
 
 ### 參考網址
 
-[虛擬機器 (VM)](https://www.ibm.com/tw-zh/cloud/learn/virtual-machines) 
+[虛擬機器 (VM)](https://www.ibm.com/tw-zh/cloud/learn/virtual-machines)
+
 [什麼是虛擬機器 (VM)？](https://azure.microsoft.com/zh-tw/resources/cloud-computing-dictionary/what-is-a-virtual-machine/#overview)
 
 <!-- -------------------------------------------------- -->
@@ -78,7 +79,8 @@ Docker 是個管理容器的服務，提供應用層級虛擬化技術。容器�
 
 ### 參考網址
 
-[Docker 教學-1 架構及指令](https://mga8326.blogspot.com/2019/05/docker-1.html) 
+[Docker 教學-1 架構及指令](https://mga8326.blogspot.com/2019/05/docker-1.html)
+
 [Docker 基本概念](https://tw.coderbridge.com/series/fa1b91903cf2495abd0034c823387a62/posts/0e37cfaab7c149bcbc0ed8df8b6cff67)
 
 <!-- -------------------------------------------------- -->
