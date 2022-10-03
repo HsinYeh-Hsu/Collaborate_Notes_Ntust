@@ -18,7 +18,7 @@
   - OPTION
     - 可用來獲取當前URL支援的請求方法，返回一個header為ALLOW的標頭，值為支援的方法，如"GET,POST"
 - 在舊版本中，請求會有阻塞的現象，須等到前一個請求處理完畢才會處理下一個，直到HTTP1.1提出pipelining的概念後才有改善(如圖)
-  ![圖1](1.jpg)
+  ![圖1](./picture/1.jpg)
 - 不過，pipelining並沒有那麼好，只有GET和HEAD等請求方式可以使用，POST由於可能存在先後順序所以不支援，且大部分代理伺服器廠商並不支援pipelining
 
 #### HTTPS
