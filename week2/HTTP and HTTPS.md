@@ -32,7 +32,6 @@ ___
 
 ### 資料來源
 
-- HTTP and HTTPS:
-  - [程式人生(HTTP請求方式)](https://www.796t.com/content/1543599004.html)
-  - [HTTP2.0](https://iter01.com/614030.html)
-  - [維基百科](https://zh.wikipedia.org/zh-tw/%E8%B6%85%E6%96%87%E6%9C%AC%E4%BC%A0%E8%BE%93%E5%8D%8F%E8%AE%AE)
+ - [程式人生(HTTP請求方式)](https://www.796t.com/content/1543599004.html)
+ - [HTTP2.0](https://iter01.com/614030.html)
+ - [維基百科](https://zh.wikipedia.org/zh-tw/%E8%B6%85%E6%96%87%E6%9C%AC%E4%BC%A0%E8%BE%93%E5%8D%8F%E8%AE%AE)
