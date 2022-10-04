@@ -149,7 +149,7 @@ MQTT
 
 最初代表的意思是Message Queueing Telemetry Transport（訊息佇列遙測傳輸），MQTT協定的訊息內容很精簡，非常適合用於處理器資源及網路頻寬有限的物聯網裝置。
 
-### MQTT 跟 HTPP 的比較
+### MQTT 跟 HTTP 的比較
 
 底層都是TCP/IP，可以沿用既有的網路架構和設備，差別在網路上流通的「訊息格式」以及應用程式的「處理機制」不同。
 
@@ -183,7 +183,7 @@ WebSocket 是一種網路傳輸協定，可在單個TCP連接上進行全雙工�
     傳送資料的方式是雙向的，Client端可以像Ajax一樣做請求，
     Server端也能主動發送Client所需要的資料，使Client和Server之間的資料交換變得簡單。
 
-### Websocket 跟 HTPP 的比較
+### Websocket 跟 HTTP 的比較
 
 - 相同
 
