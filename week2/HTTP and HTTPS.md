@@ -1,5 +1,7 @@
 ### HTTP and HTTPS
 
+___
+
 #### HTTP
 
 - HTTP全名為超文本傳輸協議(HyperText Transfer Protocol)，預設使用80埠通訊
@@ -21,6 +23,8 @@
   ![圖1](./picture/1.jpg)
 - 不過，pipelining並沒有那麼好，只有GET和HEAD等請求方式可以使用，POST由於可能存在先後順序所以不支援，且大部分代理伺服器廠商並不支援pipelining
 
+___
+
 #### HTTPS
 
 - HTTPS全名為超文本傳輸安全協議(HyperText Transfer Protocol Secure)，預設使用443埠
@@ -30,7 +34,7 @@
 - 其實HTTPS除了加密以外和HTTP沒有太大的差別，包括請求方式等等
 ___
 
-### 資料來源
+#### 資料來源
 
  - [程式人生(HTTP請求方式)](https://www.796t.com/content/1543599004.html)
  - [HTTP2.0](https://iter01.com/614030.html)
