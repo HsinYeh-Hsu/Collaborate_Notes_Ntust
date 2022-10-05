@@ -37,3 +37,4 @@ ___
 
 - [維基百科(Websocket)](https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwjli8f0lsb6AhWL6mEKHWMyAfwQFnoECAcQAQ&url=https%3A%2F%2Fzh.wikipedia.org%2Fzh-tw%2FWebSocket&usg=AOvVaw3tChWMEzL154__Meb4-XK8)
 - [iT邦幫忙](https://ithelp.ithome.com.tw/articles/10249282)
+- [Medium](https://medium.com/%E5%BD%BC%E5%BE%97%E6%BD%98%E7%9A%84-swift-ios-app-%E9%96%8B%E7%99%BC%E6%95%99%E5%AE%A4/ios-x-iot-2-mqtt-%E7%B0%A1%E4%BB%8B-e750aa420162)
