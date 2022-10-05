@@ -29,5 +29,6 @@ ___
 #### 資料來源
 
 - [NordVPN](https://nordvpn.com/zh-tw/blog/tcp-udp-bijiao/)
-- [維基百科](https://zh.wikipedia.org/zh-tw/%E4%BC%A0%E8%BE%93%E6%8E%A7%E5%88%B6%E5%8D%8F%E8%AE%AE)
+- [維基百科(TCP)](https://zh.wikipedia.org/zh-tw/%E4%BC%A0%E8%BE%93%E6%8E%A7%E5%88%B6%E5%8D%8F%E8%AE%AE)
+- [維基百科(UDP)](https://zh.wikipedia.org/zh-tw/%E7%94%A8%E6%88%B7%E6%95%B0%E6%8D%AE%E6%8A%A5%E5%8D%8F%E8%AE%AE)
 - [CSDN](https://blog.csdn.net/freekiteyu/article/details/72236734)
