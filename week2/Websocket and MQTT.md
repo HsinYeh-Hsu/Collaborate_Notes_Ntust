@@ -4,7 +4,7 @@ ___
 
 #### Weboscket
 
-- 是一種Weboscket建立於TCP上的通訊協定，可在單個TCP連接上建立雙向通訊
+- Weboscket是一種建立於TCP上的通訊協定，可在單個TCP連接上建立雙向通訊
 - 和HTTP相容，但是相較於HTTP，Websocket為全雙工式，因此Server可以主動傳輸訊息給Client
 - 主要應用於聊天室等需要一直更新來自Server的訊息的場景，聊天室這類的應用如果使用HTTP，則需要等到Client送出訊息才能收到來自Server的更新，或是使用輪詢(polling)的方式，顯而易見會造成資源的浪費
 
@@ -33,6 +33,7 @@ ___
     ![圖六](picture/6.jpg)
 
 ___
+
 #### 資料來源
 
 - [維基百科(Websocket)](https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwjli8f0lsb6AhWL6mEKHWMyAfwQFnoECAcQAQ&url=https%3A%2F%2Fzh.wikipedia.org%2Fzh-tw%2FWebSocket&usg=AOvVaw3tChWMEzL154__Meb4-XK8)
