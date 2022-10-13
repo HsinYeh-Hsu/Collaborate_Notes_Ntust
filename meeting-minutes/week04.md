@@ -16,6 +16,10 @@ To Do List
 - 了解 API 文件 
 
     - 透過 API，可以讓雙方交換資料
+  
+- 試著做做看
+  
+    - 關鍵字 : react streaming video
 
 提供的建議 (工具)
 ---
