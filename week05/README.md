@@ -1,7 +1,7 @@
-# Capstone: LiveStreaming 
+# Capstone: LiveStreaming
+10/27 - 10/26, 2022
 
     by Wei-Han Chen
-
 
 ### Note ([press me](https://hackmd.io/@wei06097/HJTCfD-Vi))
 
