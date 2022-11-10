@@ -14,31 +14,33 @@ app.use(express.static('public'))
 const users = {}
 app.get('/:room', (req, res) => {
   res.render('room', { roomId: req.params.room })
-  console.log("room")
+  //console.log("room")
 })
 
 io.on('connection', socket => {
-  console.log('connection established')
   socket.on('join-room', (roomId, userId) => {
 
     socket.join(roomId)
     socket.to(roomId).emit('user-connected', userId)
-    console.log(userId,'joined-room') 
+    //console.log(roomId,userId,'joined-room') 
 
     socket.on('new-user', name => {
       users[socket.id] = name
-      socket.emit('user-connected__', name)
-      console.log(name,'new user connected')
+      io.emit('user-connected__', name)
+      // console.log
+      console.log(users[socket.io],'new user connected')
     })
 
     socket.on('send-chat-message', message => {
-      socket.emit('chat-message', { message: message, name: users[socket.id] })
-      console.log('chat message sent')
+      io.emit('chat-message', { name: users[socket.id], message: message })
+      // console.log chat message
+      //console.log('chat message sent',message)
     })
 
     socket.on('disconnect', () => {
       socket.to(roomId).emit('user-disconnected', userId)
-      socket.emit('user-disconnected', users[socket.id])
+      io.emit('user-disconnected', users[socket.id])
+      //console.log(users[socket.io])
       delete users[socket.id]
     })
   }) 

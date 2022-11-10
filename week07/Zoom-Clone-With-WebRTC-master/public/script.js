@@ -7,6 +7,12 @@ const videoGrid = document.getElementById('video-grid')
 const User_name = prompt('What is your name?')
 appendMessage('You joined')
 socket.emit('new-user', User_name)
+console.log('script start')
+console.log(User_name)
+// socket.on('new-user',User_name =>{
+//   appendMessage(User_name)
+//   console.log(User_name)
+// })
 socket.on('chat-message', data => {
   appendMessage(`${data.name}: ${data.message}`)
   console.log(data)
@@ -50,6 +56,7 @@ navigator.mediaDevices.getUserMedia({
   addVideoStream(myVideo, stream)
 
   myPeer.on('call', call => {
+    console.log('peer connected')
     call.answer(stream)
     const video = document.createElement('video')
     call.on('stream', userVideoStream => {
@@ -59,7 +66,13 @@ navigator.mediaDevices.getUserMedia({
 
   socket.on('user-connected', userId => {
     connectToNewUser(userId, stream)
+    // username ok
+    console.log('User connected',User_name)
   })
+  socket.on('new-user',User_name =>{
+    appendMessage(User_name)
+     console.log(User_name)
+   })
 })
 
 socket.on('user-disconnected', userId => {
