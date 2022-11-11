@@ -12,6 +12,8 @@ app.use(express.static('public'))
 //   res.redirect(`/${uuidV4()}`)
 // })
 const users = {}
+// 測試
+const i=0;
 app.get('/:room', (req, res) => {
   res.render('room', { roomId: req.params.room })
   //console.log("room")
@@ -28,19 +30,21 @@ io.on('connection', socket => {
       users[socket.id] = name
       io.emit('user-connected__', name)
       // console.log
-      console.log(users[socket.io],'new user connected')
+      //console.log(users[socket.Id])
+      //console.log(name,'new user connected')
     })
 
     socket.on('send-chat-message', message => {
       io.emit('chat-message', { name: users[socket.id], message: message })
       // console.log chat message
-      //console.log('chat message sent',message)
+      //console.log('chat message sent',message) 
     })
 
     socket.on('disconnect', () => {
       socket.to(roomId).emit('user-disconnected', userId)
       io.emit('user-disconnected', users[socket.id])
-      //console.log(users[socket.io])
+      // disconnect 可以觸發
+      console.log('user disconnected')
       delete users[socket.id]
     })
   }) 

@@ -6,7 +6,7 @@ const messageInput = document.getElementById('message-input')
 const videoGrid = document.getElementById('video-grid')
 const User_name = prompt('What is your name?')
 appendMessage('You joined')
-socket.emit('new-user', User_name)
+// socket.emit('new-user', User_name)
 console.log('script start')
 console.log(User_name)
 // socket.on('new-user',User_name =>{
@@ -30,7 +30,7 @@ socket.on('user-disconnected', User_name => {
 messageForm.addEventListener('submit', e => {
   e.preventDefault()
   const message = messageInput.value
-  appendMessage(`You: ${message}`)
+  //appendMessage(`You: ${message}`)
   socket.emit('send-chat-message', message)
   messageInput.value = ''
 })
@@ -81,6 +81,7 @@ socket.on('user-disconnected', userId => {
 
 myPeer.on('open', id => {
   socket.emit('join-room', ROOM_ID, id)
+  socket.emit('new-user', User_name)
 })
 
 function connectToNewUser(userId, stream) {
