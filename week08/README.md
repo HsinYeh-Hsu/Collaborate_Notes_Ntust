@@ -4,6 +4,7 @@
 
 1. 將server包進docker image並執行
 2. 學習關聯式資料庫(SQLite)
+3. 資料結構的全英文報告
 
 #### Docker
 
