@@ -8,6 +8,8 @@
 
 - 陳韋翰
     - 分享 Capstone 最終成果
+    - 討論 Function 是否能使用全域變數
+    - 提出 JavaScript 的 Function 及物件操作問題
 
 - 劉品宗
     - 分享 VM 使用 Docker 的好處 (ssh 連到 VM 退出後仍可執行)
