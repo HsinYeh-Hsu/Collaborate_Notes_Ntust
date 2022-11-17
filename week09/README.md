@@ -10,7 +10,10 @@
     - 分享 Capstone 最終成果
 
 - 劉品宗
-    - 討論 Docker 的 BUG ???
+    - 分享 VM 使用 Docker 的好處 (ssh 連到 VM 退出後仍可執行)
+    - 分享 Docker 建置 image 及執行命令
+    - 討論 Docker 採用 --net host 指令的原因 (讓 container 直接使用 host(VM) 的網路)
+    - 分享 SQLite 使用心得
 
 ### 開會紀錄
 
