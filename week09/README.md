@@ -3,7 +3,7 @@
 
 ### 進度
 
-- 學習 React ([參考影片](https://youtu.be/zqV7NIFGDrQ))
+- 學習 React ([Code](https://github.com/wei06097/React-Practice1))
 
 ### 平台分享
 
