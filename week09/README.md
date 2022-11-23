@@ -48,7 +48,7 @@
     return () => {
       // Clean up the subscription
       subscription.unsubscribe()
-    };
+    }
   }, [props.source])
   ```
 
@@ -125,11 +125,11 @@
 
   ```JavaScript
   // in Children.js
-  import {useContext} from 'react';
+  import {useContext} from 'react'
   import {useTheme, useThemeUpdate} from './ThemeProvider'
 
   export default Children = function () {
-    const darkTheme = useTheme();
+    const darkTheme = useTheme()
     const toggleTheme = useThemeUpdate()
     const themeStyles = {
       backgroundColor: darkTheme? '#333': '#ccc', 
@@ -155,29 +155,29 @@
   import {useReducer} from 'react'
 
   function Init(initialValue) {
-    return { count: initialValue };
+    return { count: initialValue }
   }
 
   function reducer(state, action) {
     switch (action.type) {
       case 'increment':
-        return { count: state.count + 1 };
+        return { count: state.count + 1 }
       case 'decrement':
-        return { count: state.count - 1 };
+        return { count: state.count - 1 }
       default:
-        return state;
+        return state
     }
   }
 
   export default App = function () {
-    const [state, dispatch] = useReducer(reducer, initialValue, Init);
+    const [state, dispatch] = useReducer(reducer, initialValue, Init)
     return (
       <>
         Count: {state.count}
         <button onClick={() => dispatch({ type: 'decrement' })}>-</button>
         <button onClick={() => dispatch({ type: 'increment' })}>+</button>
       </>
-    );
+    )
   }
   ```
 
