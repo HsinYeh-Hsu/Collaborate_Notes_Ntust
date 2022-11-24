@@ -10,6 +10,8 @@
   <script defer src="https://unpkg.com/peerjs@1.4.7/dist/peerjs.min.js"></script>
   <script src="/socket.io/socket.io.js" defer></script>
   <script src="script.js" defer></script>
+  <!--畫面分享-->
+  <script src="https://webrtc.github.io/adapter/adapter-latest.js"></script>
   <title>Document</title>
   <style>
     body {
@@ -68,6 +70,11 @@
     <input type="text" id="message-input">
     <button type="submit" id="send-button">Send</button>
   </form>
-
+  <div>
+    <button id="share">分享畫面</button>
+  </div>
+  <div>
+    <video width="640" height="360" autoplay playsinline id="player"></video>
+  </div>
 </body>
 </html>

@@ -31,20 +31,20 @@ io.on('connection', socket => {
       io.emit('user-connected__', name)
       // console.log
       //console.log(users[socket.Id])
-      //console.log(name,'new user connected')
+      console.log(name,'new user connected')
     })
 
     socket.on('send-chat-message', message => {
       io.emit('chat-message', { name: users[socket.id], message: message })
       // console.log chat message
-      //console.log('chat message sent',message) 
+      console.log(users[socket.id],':chat message sent',message) 
     })
 
     socket.on('disconnect', () => {
-      socket.to(roomId).emit('user-disconnected', userId)
+      //socket.to(roomId).emit('user-disconnected', userId)
       io.emit('user-disconnected', users[socket.id])
       // disconnect 可以觸發
-      console.log('user disconnected')
+      console.log(users[socket.id], 'user disconnected')
       delete users[socket.id]
     })
   }) 

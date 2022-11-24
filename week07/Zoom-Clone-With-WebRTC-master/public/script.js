@@ -4,6 +4,9 @@ const messageContainer = document.getElementById('message-container')
 const messageForm = document.getElementById('send-container')
 const messageInput = document.getElementById('message-input')
 const videoGrid = document.getElementById('video-grid')
+//畫面直播
+const videoElement = document.querySelector('video#player')
+//
 const User_name = prompt('What is your name?')
 appendMessage('You joined')
 // socket.emit('new-user', User_name)
@@ -40,8 +43,29 @@ function appendMessage(message) {
   messageElement.innerText = message
   messageContainer.append(messageElement)
 }
-//================================================================
 
+
+//================================================================
+//分想直播
+// function start() {
+//   if (window.stream) {
+//     window.stream.getTracks().forEach((track) => {
+//       track.stop()
+//     })
+//   }
+//   const constraints = {
+//     frameRate: 15,
+//     width: 640,
+//     height: 360,
+//   }
+//   navigator.mediaDevices
+//     .getDisplayMedia(constraints)
+//     .then(gotStream)
+//     .catch(handleError)
+// }
+//btnShare.onclick = start
+
+//
 const myPeer = new Peer(undefined, {
   host: '/',
   port: '3001'
