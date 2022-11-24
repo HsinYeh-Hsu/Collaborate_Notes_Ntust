@@ -44,6 +44,7 @@ io.on('connection', socket => {
       //socket.to(roomId).emit('user-disconnected', userId)
       io.emit('user-disconnected', users[socket.id])
       // disconnect 可以觸發
+      io.emit('remove-video')
       console.log(users[socket.id], 'user disconnected')
       delete users[socket.id]
     })
