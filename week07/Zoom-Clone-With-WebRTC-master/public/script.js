@@ -77,13 +77,13 @@ navigator.mediaDevices.getUserMedia({
   video: true,
   audio: true
 }).then(stream => {
-  addVideoStream(myVideo, stream)
+  addVideoStream(myVideo, stream, 'self')
   myPeer.on('call', call => {
     console.log('peer connected')
     call.answer(stream)
     const video = document.createElement('video')
     call.on('stream', userVideoStream => {
-      addVideoStream(video, userVideoStream)
+      addVideoStream(video, userVideoStream, call.peer)
     })
   })
 
@@ -103,6 +103,7 @@ socket.on('user-disconnected', userId => {
 })
 
 myPeer.on('open', id => {
+  // console.log(`peerId: ${id}`)
   socket.emit('join-room', ROOM_ID, id)
   socket.emit('new-user', User_name)
 })
@@ -111,15 +112,19 @@ function connectToNewUser(userId, stream) {
   const call = myPeer.call(userId, stream)
   const video = document.createElement('video')
   call.on('stream', userVideoStream => {
-    addVideoStream(video, userVideoStream)
+    addVideoStream(video, userVideoStream, call.peer)
   })
   peers[userId] = call
 }
 
-function addVideoStream(video, stream) {
+function addVideoStream(video, stream, peerId) {
   video.srcObject = stream
   video.addEventListener('loadedmetadata', () => {
     video.play()
   })
   videoGrid.append(video)
+  socket.once('remove-video-' + peerId, () => {
+    // console.log(`${peerId}: 移除video`)
+    video.remove()
+  })
 }

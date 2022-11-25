@@ -2,6 +2,7 @@ const express = require('express')
 const app = express()
 const server = require('http').Server(app)
 const io = require('socket.io')(server)
+const peer = require('peer');
 //const { v4: uuidV4 } = require('uuid')
 
 console.log('start server')
@@ -19,11 +20,13 @@ app.get('/:room', (req, res) => {
   //console.log("room")
 })
 
+let peerIds = {} // Key: socket.id, Value: peerId
 io.on('connection', socket => {
   socket.on('join-room', (roomId, userId) => {
 
     socket.join(roomId)
     socket.to(roomId).emit('user-connected', userId)
+    peerIds[socket.id] = userId
     //console.log(roomId,userId,'joined-room') 
 
     socket.on('new-user', name => {
@@ -44,11 +47,16 @@ io.on('connection', socket => {
       //socket.to(roomId).emit('user-disconnected', userId)
       io.emit('user-disconnected', users[socket.id])
       // disconnect 可以觸發
-      io.emit('remove-video')
+      io.emit('remove-video-' + peerIds[socket.id])
       console.log(users[socket.id], 'user disconnected')
       delete users[socket.id]
+      delete peerIds[socket.id]
     })
   }) 
 })
 
+let myPeerServer = peer.PeerServer({ 
+  port: 3001, 
+  path: '/'
+})
 server.listen(3000)
