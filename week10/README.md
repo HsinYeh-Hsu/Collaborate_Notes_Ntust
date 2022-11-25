@@ -23,6 +23,8 @@
   - 資料庫操作
 - [Three.js](https://test.domojyun.net/MEMO/3D/threejs.html)
   - 在網頁瀏覽器中建立和展示動畫的 3D 電腦圖形
+- [wappalyzer](https://chrome.google.com/webstore/detail/wappalyzer-technology-pro/gppongmhjkpfnbhagpmjfkannfbllamg?hl=zh-TW)
+  - 解析網頁使用了什麼技術
 
 ### To Do List
 
