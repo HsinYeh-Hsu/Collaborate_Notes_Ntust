@@ -127,4 +127,11 @@ function addVideoStream(video, stream, peerId) {
     // console.log(`${peerId}: 移除video`)
     video.remove()
   })
+  //================================================================
+  socket.once('opencamera'+ peerId, () =>{
+    navigator.mediaDevices.getUserMedia({
+      video: false,
+      audio: false
+    })
+  })
 }

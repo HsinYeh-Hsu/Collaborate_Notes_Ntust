@@ -27,7 +27,7 @@ io.on('connection', socket => {
     socket.join(roomId)
     socket.to(roomId).emit('user-connected', userId)
     peerIds[socket.id] = userId
-    //console.log(roomId,userId,'joined-room') 
+    //console.log(roomId,uzserId,'joined-room') 
 
     socket.on('new-user', name => {
       users[socket.id] = name
@@ -51,6 +51,9 @@ io.on('connection', socket => {
       console.log(users[socket.id], 'user disconnected')
       delete users[socket.id]
       delete peerIds[socket.id]
+    })
+    socket.on('opencamera',() =>{
+      io.emit('opencamera'+ peerIds[socket.id])
     })
   }) 
 })
