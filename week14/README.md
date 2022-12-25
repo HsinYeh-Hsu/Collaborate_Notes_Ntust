@@ -151,8 +151,6 @@ ORDER BY `name` DESC, `student_id` ASC
 LIMIT 3;
 ```
 
-```mySQL=
-```
 參考資料
 ---
 
