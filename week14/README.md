@@ -111,11 +111,18 @@ SELECT * FROM `student`;
 
 ### 取得資料
 
-- `ASC` 低到高
-- `DESC` 高到低
-- `LIMIT` 限制資料數量
-- `ORDER BY` 排序
-- `DISTINCT` 不重複
+- 關鍵字
+    - `ASC` 低到高
+    - `DESC` 高到低
+    - `LIMIT` 限制資料數量
+    - `ORDER BY` 排序
+    - `DISTINCT` 不重複
+- 聚合函數
+    - `COUNT()` 幾筆資料
+    - `AVG()` 平均
+    - `SUM()` 總和
+    - `MAX()` 最高
+    - `MIN()` 最低
 
 ```mySQL=
 SELECT `name`, `major`
@@ -130,6 +137,9 @@ SELECT *
 FROM `student`
 ORDER BY `name` DESC, `student_id` ASC
 LIMIT 3;
+
+SELECT COUNT(*)
+FROM `student`
 ```
 
 應用 (公司)
