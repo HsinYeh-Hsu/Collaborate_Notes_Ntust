@@ -9,7 +9,6 @@
 
 基本操作
 ---
-
 ### tables / keys
 
 - `主鍵` `primary key`，可使用一個或多個 primary key
@@ -38,12 +37,13 @@ USE `database`;
 
 ### 創建表格
 
-- `INT` 整數
-- `DECIMAL(m,n)` 有小數點的數 (總位數，小數點位數)
-- `VARCHAR(n)` 字串
-- `BLOB` Binary Large Object (圖片、影片、檔案)
-- `DATE` 日期 `'YYYY-MM-DD'`
-- `TIMESTAMP` 紀錄時間 `'YYYY-MM-DD HH:MM:SS'`
+- 資料型態
+    - `INT` 整數
+    - `DECIMAL(m,n)` 有小數點的數 (總位數，小數點位數)
+    - `VARCHAR(n)` 字串
+    - `BLOB` Binary Large Object (圖片、影片、檔案)
+    - `DATE` 日期 `'YYYY-MM-DD'`
+    - `TIMESTAMP` 紀錄時間 `'YYYY-MM-DD HH:MM:SS'`
 
 ```mySQL=
 /* 創建表格 */
@@ -66,13 +66,11 @@ ALTER TABLE `student` ADD `gpa` DECIMAL(3, 2);
 ALTER TABLE `student` DROP COLUMN `gpa`;
 ```
 
-### 限制
-
-- `DEFAULT` 預設值
-- `UNIQUE` 必需唯一
-- `NOT NULL` 不可為空
-- `AUTO_INCREMENT` 自動遞增
-
+- 限制
+    - `DEFAULT` 預設值
+    - `UNIQUE` 必需唯一
+    - `NOT NULL` 不可為空
+    - `AUTO_INCREMENT` 自動遞增
 
 ```mySQL=
 CREATE TABLE `student`(
@@ -82,6 +80,12 @@ CREATE TABLE `student`(
     PRIMARY KEY(`student_id`)
 );
 ```
+
+- On Delete
+    - on delete set null
+    若有資料被刪除，其他資料對應到此資料的 foreign key 會設為 null
+    - on delete cascade
+    若有資料被刪除，其他對應到此資料的資料也跟者刪掉
 
 ### 插入/修改/刪除 資料
 
@@ -117,7 +121,26 @@ SELECT * FROM `student`;
     - `LIMIT` 限制資料數量
     - `ORDER BY` 排序
     - `DISTINCT` 不重複
-- 聚合函數
+
+```mySQL=
+/* 在學生表格內，取得主修是忍者的學生，只列出名字與主修兩個屬性 */
+SELECT `name`, `major`
+FROM `student`
+WHERE `major` = 'ninja';
+
+/* 在學生表格內，取得主修是忍者和歷史的學生 */
+SELECT *
+FROM `student`
+WHERE `major` IN('ninja', 'history');
+
+/* 在學生表格內，依照名字大到小編排、id小到大編排，取得前3筆資料 */
+SELECT *
+FROM `student`
+ORDER BY `name` DESC, `student_id` ASC
+LIMIT 3;
+```
+
+- 聚合函數 Aggregate Function
     - `COUNT()` 幾筆資料
     - `AVG()` 平均
     - `SUM()` 總和
@@ -125,21 +148,91 @@ SELECT * FROM `student`;
     - `MIN()` 最低
 
 ```mySQL=
-SELECT `name`, `major`
-FROM `student`
-WHERE `major` = 'ninja';
-
-SELECT *
-FROM `student`
-WHERE `major` IN('ninja', 'history');
-
-SELECT *
-FROM `student`
-ORDER BY `name` DESC, `student_id` ASC
-LIMIT 3;
-
+/* 學生表格內有幾筆資料 */
 SELECT COUNT(*)
-FROM `student`
+FROM `student`;
+```
+
+- 萬用字元 Wildcard
+    - `%` 代表多個字元
+    - `_` 代表一個字元
+
+```mySQL=
+/* 取得電話號碼尾數335的客戶 */
+select * 
+from `client`
+where `phone` like '%335';
+
+/* 取得電話號碼含有354的客戶 */
+select * 
+from `client`
+where `phone` like '%354%';
+
+/* 取得生日在12月的員工 */
+select *
+from `employee`
+where `birth_date` like '____-12-__'; 
+```
+
+- 聯集 Union
+    - 屬性數目必須一樣
+    - 合併的資料型態必須一樣
+```mySQL=
+/* 取得員工名字和客戶名字 */
+select `name`
+from `employee`
+union
+select `client_name`
+from `client`;
+
+/* 取得員工id名字和客戶id名字*/
+select `emp_id` as `total_id`, `name` as `total_name`
+from `employee`
+union
+select `client_id`, `client_name`
+from `client`;
+```
+
+- 連接 join
+```mySQL=
+/* 取得所有部門的經理 */
+select `branch_name`, `emp_id`, `name`
+from `employee`
+join `branch`
+on `emp_id` = `manager_id`;
+
+/* 嚴謹寫法 */
+select `branch`.`branch_name`, `employee`.`emp_id`, `employee`.`name`
+from `employee`
+join `branch`
+on `employee`.`emp_id` = `branch`.`manager_id`;
+
+/* 無論條件是否成立都會回傳左邊表格 */
+select `branch_name`, `emp_id`, `name`
+from `branch`
+left join `employee`
+on `emp_id` = `manager_id`;
+```
+
+- 子查詢 subquery
+```mySQL=
+/* 找出研發部經理的名字 */
+select `emp_id`,`name`
+from `employee`
+where `emp_id` = (
+    select `manager_id`
+    from `branch`
+    where `branch_name` = '研發'
+);
+
+/* 找出銷售額超過50000的員工 */
+select `emp_id`, `name`
+from `employee`
+where `emp_id` in(
+    select `emp_id`
+    from `works_with`
+    where `total_sales` >= 50000
+);
 ```
 
 應用 (公司)
