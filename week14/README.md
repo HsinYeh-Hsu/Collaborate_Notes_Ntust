@@ -335,7 +335,33 @@ insert into `works_with` values(208, 403, 24000);
 insert into `works_with` values(210, 404, 87940);
 ```
 
+Python 串接
+---
+安裝 mysql 套件 `pip install mysql-connector-python`
+
+```python=
+import mysql.connector as db
+
+connection = db.connect(
+    host = 'localhost',
+    port = '3306',
+    user = 'root',
+    password = '12345',
+    database = 'database'
+)
+
+cursor = connection.cursor()
+cursor.execute("SELECT `name`, `emp_id` FROM `employee`")
+records = cursor.fetchall()
+cursor.close()
+
+# connection.commit() #若有修改資料，需下這條指令將資料提交出去
+connection.close()
+
+for record in records:
+    print(record)
+```
+
 參考資料
 ---
-
 - [SQL 3小時初學者教學](https://www.youtube.com/watch?v=gvRXjsrpCHw)
