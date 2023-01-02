@@ -18,7 +18,8 @@
 - [實現 360 全景的 N 種方案](https://developer.aliyun.com/article/783218)
 - [SphereGeometry](https://threejs.org/docs/#api/en/geometries/SphereGeometry)
 
-===
+---
+
 VS Code 連到 Ubuntu 
 ---
 ### Ubuntu
