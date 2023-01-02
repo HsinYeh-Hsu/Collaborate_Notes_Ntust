@@ -16,10 +16,9 @@
 - [VSCode Remote SSH](https://youtube.com/watch?v=w8KJHY3Rplc&feature=shares)
 - [Linux 和 Windows 共享文件夹](https://blog.csdn.net/qq_43516928/article/details/119430588)
 - [實現 360 全景的 N 種方案](https://developer.aliyun.com/article/783218)
+- [SphereGeometry](https://threejs.org/docs/#api/en/geometries/SphereGeometry)
 
-### 筆記
----
-
+===
 VS Code 連到 Ubuntu 
 ---
 ### Ubuntu
