@@ -1,0 +1,20 @@
+# 第16周
+[TOC]
+### 嘗試用Django做登入系統
+- 帳號申請：
+    - 帳號,密碼,email
+    - ![](https://i.imgur.com/VTvstZJ.png)
+- 登入畫面
+    - ![](https://i.imgur.com/9bIchL5.png)
+- 功能：
+    - ![](https://i.imgur.com/l8ubuDx.png)
+    - ![](https://i.imgur.com/MFcgGR7.png)
+- 資料庫：postgresql
+    - 把資料庫掛到雲端(Heroku)
+    - ![](https://i.imgur.com/WFWupVr.png)
+    - ![](https://i.imgur.com/ImFaADR.png)
+- bootstrap
+    - 簡單的網頁界面
+### 專題題目訂定
+- [網址](https://hackmd.io/@Maksim-Hsu/BywnsQt5s/edit)
+- ![](https://i.imgur.com/aaUVZnG.png)
