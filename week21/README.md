@@ -24,7 +24,7 @@
 
 - 結帳畫面
 
-    ![](img/Bill.pngg)
+    ![](img/Bill.png)
 
 - 購買清單 / 我的訂單
 
