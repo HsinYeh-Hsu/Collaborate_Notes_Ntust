@@ -12,8 +12,12 @@
         https://gitmind.com/app/docs/myticrb2
 
 - 架構圖
-    - 租借平台 架構圖 (前端開發功能用)
+    - 租借平台 架構圖 (預期結果)
+
+        https://gitmind.com/app/docs/frjdr4h8
     
+    - 租借平台 架構圖 (前端開發功能用)
+
         https://gitmind.com/app/docs/fd6pa75d
 
 - 流程圖
