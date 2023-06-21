@@ -7,12 +7,12 @@
 2. 討論 VM 連不上問題
    - known_hosts 也是一種 Cache
 
-1. 之後進度
+3. 之後進度
     - 陳韋翰 : 目標 2 個禮拜用完網頁，開始碰 AI
     - 劉品宗 : 已經用好 Swagger，這個禮拜先做 Socket
     - 徐欣業 : 包好 Docker
 
-2. AI 方向
+4. AI 方向
     - 可以圖片去背 (不一定要用AI，也可用 Filter)
     - 可以接語言模型 (OpenAI API 要先申請)
 
