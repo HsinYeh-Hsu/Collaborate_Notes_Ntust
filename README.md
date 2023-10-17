@@ -8,6 +8,7 @@
 # 程式碼
 - [前端](https://github.com/wei06097/Rental_Platform_Linux/)
 - [後端](https://github.com/zong1203/apiserver)
+- [導航後端](https://github.com/wei06097/navigation_server)
 
 # 文件
 - 心智圖
