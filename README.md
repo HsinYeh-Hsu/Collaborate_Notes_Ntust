@@ -16,6 +16,10 @@
 
         https://gitmind.com/app/docs/myticrb2
 
+    - 租借平台 功能
+        
+        https://gitmind.com/app/docs/maxust4w
+
 - 架構圖
     - 租借平台 架構圖 (預期結果)
 
